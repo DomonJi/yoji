@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 亲爱的风吟呀,</span><br />
+				<span class="space"/><span class="comments">* 你真是我见过最可爱的小仙女.</span><br />
+				<span class="space"/><span class="comments">* 能和你在一起，我上辈子简直拯救了银河系.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"jixiaomeng"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"yifengyin"</span>);<br />
+				<span class="comments">// 2018年的三月，我们第一次见面，我很快就喜欢上了你. </span><br />
+				i.fallInLoveWith(u);<br />
+				<span class="comments">// 26号晚上，我们在一起了.</span><br />
+				u.accepted();<br />
+				<span class="comments">// 从那以后，我每时每刻都在想你.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// 想去关心你，给予你爱和呵护.</span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// 虽然我马上就要毕业，要去上海工作，不能每天见你.</span><br />
+				<span class="comments">// 但是我们相信，距离和时间是无法阻挡如此相爱的两个人的.</span><br />
+				<span class="keyword">boolean</span> youGraduated = <span class="keyword">false</span>;<br />
+				<span class="keyword">while</span> (!youGraduated) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/>i.love(u);<br />
+				<span class="placeholder"/>i.takeCareOf(u);<br />
+				<span class="placeholder"/><span class="comments">// 我会为了我们的未来好好工作努力.</span><br />
+				<span class="placeholder"/><span class="comments">// 给你富裕的生活，也给你风花雪月的浪漫.</span><br />
+				}<br />
+				<span class="comments">// 等你毕业了，我们就去领证，然后永远永远幸福的生活在一起.</span><br />
+				i.marry(u);<br />
+				<span class="comments">// 反正来日方长，为你豪掷余生又何妨.</span><br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						我的小仙女, 我们已经在一起
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						爱你到永远永远永远.<br/>
+						<div class="signature">- 你的小可爱</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2018 <a href='http://domonji.github.io'>domonji</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 2, 26);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
